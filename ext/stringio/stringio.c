@@ -1377,6 +1377,7 @@ static VALUE
 strio_truncate(VALUE self, VALUE len)
 {
     VALUE string = writable(self)->string;
+    struct StringIO *ptr = StringIO(self);
     long l = NUM2LONG(len);
     long plen = RSTRING_LEN(string);
     if (l < 0) {
@@ -1386,6 +1387,8 @@ strio_truncate(VALUE self, VALUE len)
     if (plen < l) {
 	MEMZERO(RSTRING_PTR(string) + plen, char, l - plen);
     }
+    ptr->pos = l;
+    ptr->lineno = l;
     return len;
 }
 

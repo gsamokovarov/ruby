@@ -14,5 +14,6 @@ This library is based on MoonWolf version written in Ruby.  Thanks a lot.
 * (({fileno})) returns nil.
 * (({pos=})) returns new position, not 0.
 * (({ungetc})) does nothing at start of the string.
+* (({truncate})) rewinds to the given position.
 
 =end
