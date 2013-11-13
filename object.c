@@ -3311,9 +3311,10 @@ Init_Object(void)
     rb_undef_alloc_func(rb_cTrueClass);
     rb_undef_method(CLASS_OF(rb_cTrueClass), "new");
     /*
-     * An alias of +true+
+     * Aliases of +true+
      */
     rb_define_global_const("TRUE", Qtrue);
+    rb_define_global_const("YES", Qtrue);
 
     rb_cFalseClass = rb_define_class("FalseClass", rb_cObject);
     rb_define_method(rb_cFalseClass, "to_s", false_to_s, 0);
@@ -3324,9 +3325,10 @@ Init_Object(void)
     rb_undef_alloc_func(rb_cFalseClass);
     rb_undef_method(CLASS_OF(rb_cFalseClass), "new");
     /*
-     * An alias of +false+
+     * Aliases of +false+
      */
     rb_define_global_const("FALSE", Qfalse);
+    rb_define_global_const("NO", Qfalse);
 
     for (i=0; conv_method_names[i].method; i++) {
 	conv_method_names[i].id = rb_intern(conv_method_names[i].method);

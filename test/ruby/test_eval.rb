@@ -253,10 +253,12 @@ class TestEval < Test::Unit::TestCase
     assert(!bad)
 
     assert(eval('TRUE'))
+    assert(eval('YES'))
     assert(eval('true'))
     assert(!eval('NIL'))
     assert(!eval('nil'))
     assert(!eval('FALSE'))
+    assert(!eval('NO'))
     assert(!eval('false'))
 
     $foo = 'assert(true)'
